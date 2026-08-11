@@ -211,6 +211,7 @@
     body{ font-size:13px; }
     .hero{ padding:32px 20px; }
     .hero-inner{ max-width:290px; }
+    .scroll-cue{ bottom:48px; }
   }
 
   @media (max-width:380px){
