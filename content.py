@@ -9,9 +9,10 @@ to a section on the page.
 """
 
 SITE = {
-    "title": "Grold Otieno Mboya",
-    "description": "Grold Otieno Mboya — research in causal inference, "
-                    "topological data analysis, and foundation model evaluation.",
+    "title": "Grold Otieno Mboya — AI Research",
+    "description": "I build open diagnostics that surface where foundation models "
+                    "break under distribution shift — combining TDA, causal "
+                    "inference, and empirical AI safety evaluation.",
     "name": "Grold Otieno Mboya",
     "role": "causal inference · topology · foundation model evaluation",
     "thesis": (
