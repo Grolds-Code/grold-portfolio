@@ -30,8 +30,8 @@ SITE = {
     "cv_url": "#",  # replace with a real link once the CV PDF is hosted
     "location": "Kisumu, Kenya",
     # Update these once the personal domain is registered and the site is live.
-    "canonical_url": "https://example.com/",
-    "og_image_url": "https://example.com/og-image.png",
+    "canonical_url": "https://grolds-code.github.io/grold-portfolio/",
+    "og_image_url": "https://grolds-code.github.io/grold-portfolio/og-image.png",
 }
 
 RESEARCH_STATEMENT = [
@@ -159,6 +159,7 @@ EXPERIENCE = [
     {
         "title": "NIXQUE — Co-Founder &amp; CTO",
         "meta": "2023 – present",
+        "url": "https://www.nixque.com/",
         "desc": "Sole technical lead for a full-stack technology startup; product "
                 "strategy, system architecture, and deployment pipelines in "
                 "TypeScript, React, and FastAPI.",

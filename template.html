@@ -202,7 +202,7 @@
     <h2 class="label">Experience</h2>
     {% for e in experience %}
     <div class="item">
-      <div class="t">{{ e.title }}</div>
+      <div class="t">{% if e.url %}<a href="{{ e.url }}" target="_blank" rel="noopener noreferrer">{{ e.title }}</a>{% else %}{{ e.title }}{% endif %}</div>
       <div class="m">{{ e.meta }}</div>
       <p>{{ e.desc }}</p>
     </div>
