@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="canonical" href="{{ site.canonical_url }}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ site.name }}">
+<meta property="og:description" content="{{ site.description }}">
+<meta property="og:url" content="{{ site.canonical_url }}">
+<meta property="og:image" content="{{ site.og_image_url }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ site.name }}">
+<meta name="twitter:description" content="{{ site.description }}">
+<meta name="twitter:image" content="{{ site.og_image_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.name }}",
+  "url": "{{ site.canonical_url }}",
+  "email": "mailto:{{ site.email }}",
+  "jobTitle": "{{ site.role }}",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ site.location }}"
+  },
+  "sameAs": [
+    "{{ site.orcid_url }}",
+    "{{ site.github_url }}"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+{% macro icon_links() %}
+<a href="mailto:{{ site.email }}" class="icon-link" aria-label="Email">
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M4 6l8 7 8-7"/></svg>
+  <span class="icon-label">email</span>
+</a>
+<a href="{{ site.orcid_url }}" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="ORCID">
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="10.5" x2="12" y2="16"/><circle cx="12" cy="7.6" r="0.9" fill="currentColor" stroke="none"/></svg>
+  <span class="icon-label">orcid</span>
+</a>
+<a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></svg>
+  <span class="icon-label">github</span>
+</a>
+{% if site.scholar_url %}
+<a href="{{ site.scholar_url }}" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Google Scholar">
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+  <span class="icon-label">scholar</span>
+</a>
+{% endif %}
+<a href="{{ site.cv_url }}" download class="icon-link" aria-label="Download CV">
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+  <span class="icon-label">cv</span>
+</a>
+{% endmacro %}
+
+<div class="bg-mesh" aria-hidden="true">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#1b1b19" stroke-opacity="0.07" stroke-width="0.12" fill="none">
+      <line x1="8" y1="12" x2="24" y2="6"/>
+      <line x1="24" y1="6" x2="38" y2="20"/>
+      <line x1="38" y1="20" x2="50" y2="12"/>
+      <line x1="50" y1="12" x2="62" y2="24"/>
+      <line x1="62" y1="24" x2="72" y2="10"/>
+      <line x1="72" y1="10" x2="88" y2="18"/>
+      <line x1="88" y1="18" x2="80" y2="32"/>
+      <line x1="80" y1="32" x2="94" y2="42"/>
+      <line x1="38" y1="20" x2="16" y2="30"/>
+      <line x1="16" y1="30" x2="8" y2="12"/>
+      <line x1="16" y1="30" x2="44" y2="36"/>
+      <line x1="44" y1="36" x2="38" y2="20"/>
+      <line x1="44" y1="36" x2="62" y2="24"/>
+      <line x1="44" y1="36" x2="56" y2="46"/>
+      <line x1="62" y1="24" x2="80" y2="32"/>
+      <line x1="80" y1="32" x2="56" y2="46"/>
+      <line x1="56" y1="46" x2="66" y2="56"/>
+      <line x1="66" y1="56" x2="80" y2="32"/>
+      <line x1="56" y1="46" x2="30" y2="50"/>
+      <line x1="30" y1="50" x2="16" y2="30"/>
+      <line x1="30" y1="50" x2="18" y2="56"/>
+      <line x1="18" y1="56" x2="16" y2="30"/>
+      <line x1="30" y1="50" x2="42" y2="64"/>
+      <line x1="42" y1="64" x2="56" y2="46"/>
+      <line x1="18" y1="56" x2="10" y2="70"/>
+      <line x1="18" y1="56" x2="42" y2="64"/>
+      <line x1="42" y1="64" x2="52" y2="76"/>
+      <line x1="66" y1="56" x2="76" y2="62"/>
+      <line x1="76" y1="62" x2="94" y2="42"/>
+      <line x1="76" y1="62" x2="52" y2="76"/>
+      <line x1="76" y1="62" x2="86" y2="74"/>
+      <line x1="86" y1="74" x2="96" y2="86"/>
+      <line x1="52" y1="76" x2="62" y2="86"/>
+      <line x1="62" y1="86" x2="86" y2="74"/>
+      <line x1="52" y1="76" x2="26" y2="82"/>
+      <line x1="26" y1="82" x2="10" y2="70"/>
+      <line x1="10" y1="70" x2="14" y2="96"/>
+      <line x1="26" y1="82" x2="14" y2="96"/>
+      <line x1="26" y1="82" x2="36" y2="94"/>
+      <line x1="36" y1="94" x2="52" y2="76"/>
+      <line x1="62" y1="86" x2="72" y2="96"/>
+      <line x1="36" y1="94" x2="72" y2="96"/>
+    </g>
+    <g fill="#514f8e" fill-opacity="0.03">
+      <polygon points="38,20 62,24 44,36"/>
+      <polygon points="56,46 66,56 76,62"/>
+      <polygon points="26,82 52,76 36,94"/>
+    </g>
+    <g fill="#1b1b19" fill-opacity="0.14">
+      <circle cx="38" cy="20" r="0.45"/>
+      <circle cx="62" cy="24" r="0.45"/>
+      <circle cx="44" cy="36" r="0.45"/>
+      <circle cx="56" cy="46" r="0.45"/>
+      <circle cx="30" cy="50" r="0.45"/>
+      <circle cx="76" cy="62" r="0.45"/>
+      <circle cx="52" cy="76" r="0.45"/>
+      <circle cx="86" cy="74" r="0.45"/>
+      <circle cx="26" cy="82" r="0.45"/>
+    </g>
+  </svg>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>{{ site.name }}</h1>
+    <p class="role">{{ site.role }}</p>
+    <p class="thesis">{{ site.thesis }}</p>
+    <div class="links">
+      {{ icon_links() }}
+    </div>
+  </div>
+  <a href="#research" class="scroll-cue">scroll</a>
+</section>
+
+<main>
+
+  <section id="research">
+    <h2 class="label">Research</h2>
+    {% for para in research %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </section>
+
+  <section id="publications">
+    <h2 class="label">Publications &amp; preprints</h2>
+    {% for pub in publications %}
+    <div class="pub">
+      <div class="t">{{ pub.title }}</div>
+      <div class="m">{{ pub.venue }}</div>
+      <div class="d">{{ pub.desc }}</div>
+      <div class="l"><a href="{{ pub.link_url }}" target="_blank" rel="noopener noreferrer">{{ pub.link_label }}</a></div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section id="demos">
+    <h2 class="label">Fine-tuned reasoning adapters</h2>
+    <p style="margin-bottom:26px;">{{ demos_intro }}</p>
+    {% for demo in demos %}
+    <div class="demo">
+      <span class="tag">{{ demo.tag }}</span>
+      <div class="t">{{ demo.title }}</div>
+      <p>{{ demo.desc }}</p>
+      <div class="stats">
+        {% for value, label in demo.stats %}{{ value }} <span>{{ label }}</span>{% if not loop.last %} &nbsp;·&nbsp; {% endif %}{% endfor %}
+      </div>
+      <div class="l">
+        {% for label, url in demo.links %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ label }}</a>{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section id="opensource">
+    <h2 class="label">Open-source</h2>
+    {% for proj in open_source %}
+    <div class="item">
+      <div class="t">{{ proj.title }}</div>
+      <div class="m">{% if proj.meta_url %}<a href="{{ proj.meta_url }}" target="_blank" rel="noopener noreferrer">{{ proj.meta }}</a>{% else %}{{ proj.meta }}{% endif %}</div>
+      <p>{{ proj.desc }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section id="experience">
+    <h2 class="label">Experience</h2>
+    {% for e in experience %}
+    <div class="item">
+      <div class="t">{{ e.title }}</div>
+      <div class="m">{{ e.meta }}</div>
+      <p>{{ e.desc }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section id="fellowships">
+    <h2 class="label">Fellowships &amp; education</h2>
+    {% for f in fellowships %}
+    <div class="item">
+      <div class="t">{{ f.title }}</div>
+      <div class="m">{{ f.meta }}</div>
+      {% if f.desc %}<p>{{ f.desc }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section id="recognition">
+    <h2 class="label">Recognition</h2>
+    {% for r in recognition %}
+    <div class="item">
+      <div class="t">{{ r.title }}</div>
+      <div class="m">{{ r.meta }}</div>
+      <p>{{ r.desc }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+</main>
+
+<footer>
+  <div class="links">
+    {{ icon_links() }}
+  </div>
+  <p class="fine">{{ site.location }}</p>
+  <p class="fine"><a href="#top">back to top</a></p>
+</footer>
+
+
+</body>
+</html>
